@@ -1,0 +1,31 @@
+html, body{
+	height: 100%;
+	margin: 10vh;
+	font-family: helvetica neue;
+}
+
+
+.expand{
+	/*height: 500px;*/
+}
+
+.video{
+	margin: 0;
+	padding: 0;
+	border: 0;	
+}
+
+.ytlink-container{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0.75;
+	transition: opacity 0.5s;
+}
+
+
+.ytlink-container:hover{
+	opacity: 1;
+}

@@ -2,8 +2,14 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 	
 	$(".href").click(function() { 
 		var url = $(".href").attr("href");
-		//check if url is a valid YouTube url
+		// urls must be from YouTube
+		// regex taken from here - http://stackoverflow.com/questions/2964678/jquery-youtube-url-validation-with-regex
 		if(/^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/.test(url)){	
+			//only show one video at a time
+			if($(".ytlink-container")[0]){
+				$(".ytlink-container").remove();
+			}
+
 			var id = extractVideoID(url);
 			$(".href").after('<div class="ytlink-container"><iframe src="https://www.youtube.com/embed/' + id + '?rel=0&autoplay=1' + '" width="256" height="144" frameborder="0" class="video" allowfullscreen></iframe></div>');
 			return false;
@@ -11,7 +17,6 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 	});
 
 	var ht = $(document).height();
-	//document.body.scrollHeight - (document.body.clientHeight/2);
 	console.log(ht);
 
 	$(window).on("scroll", function(){

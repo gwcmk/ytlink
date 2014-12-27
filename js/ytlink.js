@@ -1,7 +1,7 @@
 if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
 	
-	$(".href").click(function() { 
-		var url = $(".href").attr("href");
+	$("a").click(function() { 
+		var url = $("a").attr("href");
 		// urls must be from YouTube
 		// regex taken from here - http://stackoverflow.com/questions/2964678/jquery-youtube-url-validation-with-regex
 		if(/^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/.test(url)){	
@@ -29,7 +29,7 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 			// console.log("secs = " + Number(seconds));
 			// console.log("time = " + time);
 
-			$(".href").after('<div class="ytlink-container"><iframe src="https://www.youtube.com/embed/' + id + '?rel=0&autoplay=1&start=' + time +'" width="256" height="144" frameborder="0" class="video" allowfullscreen></iframe></div>');
+			$("body").append('<div class="ytlink-container"><iframe src="https://www.youtube.com/embed/' + id + '?rel=0&autoplay=1&start=' + time +'" width="256" height="144" frameborder="0" class="video" allowfullscreen></iframe></div>');
 			return false;
 		}
 	});

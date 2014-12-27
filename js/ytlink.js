@@ -30,6 +30,11 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 			// console.log("time = " + time);
 
 			$("body").append('<div class="ytlink-container"><iframe src="https://www.youtube.com/embed/' + id + '?rel=0&autoplay=1&start=' + time +'" width="256" height="144" frameborder="0" class="video" allowfullscreen></iframe></div>');
+			$(".ytlink-container").css({
+				"position" : "absolute",
+				"bottom" : "0",
+				"left" : "0"
+				})
 			return false;
 		}
 	});
@@ -47,14 +52,16 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 
 	});
 
+	// returns array with url, ID, and timestamp of video
+	function getIDAndTime(url){
+		var regExp = /^(?:https?\:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v\=))([\w-]{10,12})(?:[\&\?\#].*?)*?(?:[\&\?\#]t=([\dhm]+s))?$/;
+		var match = url.match(regExp);
+		return match;
+	}
+
 }
 
-// returns array with url, ID, and timestamp of video
-function getIDAndTime(url){
-	var regExp = /^(?:https?\:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v\=))([\w-]{10,12})(?:[\&\?\#].*?)*?(?:[\&\?\#]t=([\dhm]+s))?$/;
-	var match = url.match(regExp);
-	return match;
-}
+
 
 
 

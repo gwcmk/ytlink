@@ -5,7 +5,7 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 		// urls must be from YouTube
 		// regex taken from here - http://stackoverflow.com/questions/2964678/jquery-youtube-url-validation-with-regex
 		if(/^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/.test(url)){	
-			//only show one video at a time
+			// only show one video at a time
 			if($(".ytlink-container")[0]){
 				$(".ytlink-container").remove();
 			}
@@ -18,7 +18,7 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 				var minutes = idt[2].match(/(\d{1,2})(?=m)/);
 				var seconds = Number(idt[2].match(/(\d{1,2})(?=s)/)[0]);
 
-				//TODO: find more elegant solution for this problem
+				// TODO: find more elegant solution for this problem
 				hours = (hours === null) ? [0] : Number(hours[0]);
 				minutes = (minutes === null) ? [0] : Number(minutes[0]);
 
@@ -49,7 +49,7 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 
 }
 
-//returns array with url, ID, and timestamp of video
+// returns array with url, ID, and timestamp of video
 function getIDAndTime(url){
 	var regExp = /^(?:https?\:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v\=))([\w-]{10,12})(?:[\&\?\#].*?)*?(?:[\&\?\#]t=([\dhm]+s))?$/;
 	var match = url.match(regExp);

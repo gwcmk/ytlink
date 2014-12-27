@@ -9,7 +9,9 @@ This project is still a work in progress, do not use it as-is on any blog or web
 
 ####TODO List
 - [x] "sticky" video player
-- [ ] add support for timestamps in URL
+- [x] add support for timestamps in URL
 - [ ] does not behave correctly on "overscrolling" the bottom of the page
 - [ ] improve performance
 - [ ] eliminate "jitter" on scroll
+- [ ] rewrite using only JS, no jQuery
+- [ ] port to Chrome extension

@@ -1,9 +1,6 @@
 ytlink
 ======
 
-ytlink
-======
-
 ###[New version here](https://github.com/gwcmk/youtube-link)
 
 I originally planned to make this by giving the iframe the following css properties:
@@ -25,11 +22,4 @@ Then, I would update the bottom property as the user scrolled. This proved to be
 That's how the new version above accomplishes this effect. However, I plan to go in a different direction with this repository, so I decided to make them separate. For now, this is just a work in progress.
 
 
-####TODO List
-- [x] "sticky" video player
-- [x] add support for timestamps in URL
-- [ ] does not behave correctly on "overscrolling" the bottom of the page
-- [ ] improve performance
-- [ ] eliminate "jitter" on scroll
-- [ ] rewrite using only JS, no jQuery
-- [ ] port to Chrome extension
+

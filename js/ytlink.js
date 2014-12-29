@@ -39,13 +39,13 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 		}
 	});
 
-	var ht = $(document).height();
+	var maxScrollHeight = $('body')[0].scrollHeight -  $('body').height();
 
 	$(window).on("scroll", function(){
 		var st = $(window).scrollTop();
 		// console.log("st = " + st);
 		// console.log("ht = " + ht);
-		if(st < ht){
+		if(st < maxScrollHeight){
 			$(".ytlink-container").animate({bottom: -st}, 1);
 		}
 

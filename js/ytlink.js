@@ -24,10 +24,6 @@ if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 
 				time = hours*3600 + minutes*60 + seconds;
 			}
-			// console.log("hours = " + hours);
-			// console.log("mins = " + minutes);
-			// console.log("secs = " + Number(seconds));
-			// console.log("time = " + time);
 
 			$("body").append('<div class="ytlink-container"><iframe src="https://www.youtube.com/embed/' + id + '?rel=0&autoplay=1&start=' + time +'" width="256" height="144" frameborder="0" class="video" allowfullscreen></iframe></div>');
 			$(".ytlink-container").css({
